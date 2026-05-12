@@ -1,10 +1,17 @@
 // CSCI-40 Final Project
-// Author: [Your Name Here]
+// Author: [Alexis Pacheco]
 
 /* 
  * Description:
  *
 */
+
+struct FoodItem {
+    string name;
+    int calories;
+    double fat;
+    double carbs;
+};
 
 #include <iostream>
 
