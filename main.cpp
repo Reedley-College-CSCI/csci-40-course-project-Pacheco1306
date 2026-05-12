@@ -21,6 +21,16 @@ struct FoodItem {
     double carbs;
 };
 
+    void displayMenu() {
+    cout << endl;
+    cout << "===== Calorie Tracker Menu =====" << endl;
+    cout << "1. View food items" << endl;
+    cout << "2. Add food item" << endl;
+    cout << "3. View nutrition summary" << endl;
+    cout << "4. Save and exit" << endl;
+    cout << "Choose an option: ";
+}
+
 int readFoodItems(FoodItem* foods, int* size, int maxSize) {
     ifstream inputFile("calories.txt");
 
@@ -31,15 +41,6 @@ int readFoodItems(FoodItem* foods, int* size, int maxSize) {
         return 0;
     }
 
-    void displayMenu() {
-    cout << endl;
-    cout << "===== Calorie Tracker Menu =====" << endl;
-    cout << "1. View food items" << endl;
-    cout << "2. Add food item" << endl;
-    cout << "3. View nutrition summary" << endl;
-    cout << "4. Save and exit" << endl;
-    cout << "Choose an option: ";
-}
 
     while (*size < maxSize) {
         getline(inputFile, (foods + *size)->name);
@@ -57,7 +58,20 @@ int readFoodItems(FoodItem* foods, int* size, int maxSize) {
     }
 
     inputFile.close();
-    return 0;
+    return 1;
+}
+
+void saveFoodItems(FoodItem* foods, int size) {
+    ofstream outputFile("calories.txt");
+
+    for (int i = 0; i < size; i++) {
+        outputFile << (foods + i)->name << endl;
+        outputFile << (foods + i)->calories << endl;
+        outputFile << (foods + i)->fat << endl;
+        outputFile << (foods + i)->carbs << endl;
+    }
+
+    outputFile.close();
 }
 
 int main() {
