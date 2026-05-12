@@ -31,6 +31,16 @@ int readFoodItems(FoodItem* foods, int* size, int maxSize) {
         return 0;
     }
 
+    void displayMenu() {
+    cout << endl;
+    cout << "===== Calorie Tracker Menu =====" << endl;
+    cout << "1. View food items" << endl;
+    cout << "2. Add food item" << endl;
+    cout << "3. View nutrition summary" << endl;
+    cout << "4. Save and exit" << endl;
+    cout << "Choose an option: ";
+}
+
     while (*size < maxSize) {
         getline(inputFile, (foods + *size)->name);
 
