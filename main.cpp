@@ -109,6 +109,30 @@ void addFoodItem(FoodItem* foods, int* size, int maxSize) {
     cout << "Food item added successfully." << endl;
 }
 
+
+void displayFoodItems(FoodItem* foods, int size) {
+    if (size == 0) {
+        cout << "No food items have been recorded." << endl;
+        return;
+    }
+
+    cout << endl;
+    cout << left << setw(20) << "Food"
+         << setw(12) << "Calories"
+         << setw(10) << "Fat"
+         << setw(10) << "Carbs" << endl;
+
+    cout << "--------------------------------------------------" << endl;
+
+    for (int i = 0; i < size; i++) {
+        cout << left << setw(20) << (foods + i)->name
+             << setw(12) << (foods + i)->calories
+             << setw(10) << (foods + i)->fat
+             << setw(10) << (foods + i)->carbs << endl;
+    }
+}
+
+
 int main() {
     const int MAX_ITEMS = 100;
 
@@ -130,6 +154,8 @@ int main() {
         cout << "Invalid goal. Enter a positive calorie goal: ";
         cin >> *goalPtr;
     }
+
+    
 
     delete[] foods;
     return 0;
