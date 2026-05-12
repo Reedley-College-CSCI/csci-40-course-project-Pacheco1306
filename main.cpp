@@ -1,10 +1,14 @@
 // CSCI-40 Final Project
 // Author: [Alexis Pacheco]
 
-/* 
- * Description:
- *
-*/
+/*
+ Description:
+ This program is a calorie tracker. It reads food items from a file,
+ allows the user to add new food items, displays all food items,
+ calculates total calories, fat, and carbohydrates, and compares
+ the total calories to the user's daily calorie goal.
+ */
+
 
 
 
