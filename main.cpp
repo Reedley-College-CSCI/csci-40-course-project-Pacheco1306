@@ -74,6 +74,37 @@ void saveFoodItems(FoodItem* foods, int size) {
     outputFile.close();
 }
 
+void addFoodItem(FoodItem* foods, int* size, int maxSize) {
+    if (*size >= maxSize) {
+        cout << "Food list is full. Cannot add more items." << endl;
+        return;
+    }
+
+    cin.ignore();
+
+    cout << "Enter food name: ";
+    getline(cin, (foods + *size)->name);
+
+    cout << "Enter calories: ";
+    cin >> (foods + *size)->calories;
+
+    cout << "Enter fat grams: ";
+    cin >> (foods + *size)->fat;
+
+    cout << "Enter carbohydrate grams: ";
+    cin >> (foods + *size)->carbs;
+
+    if ((foods + *size)->calories < 0 ||
+        (foods + *size)->fat < 0 ||
+        (foods + *size)->carbs < 0) {
+        cout << "Invalid input. Values cannot be negative." << endl;
+        return;
+    }
+
+    (*size)++;
+    cout << "Food item added successfully." << endl;
+}
+
 int main() {
     return 0;
 }
