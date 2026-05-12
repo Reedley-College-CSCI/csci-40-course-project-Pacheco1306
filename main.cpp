@@ -110,5 +110,27 @@ void addFoodItem(FoodItem* foods, int* size, int maxSize) {
 }
 
 int main() {
+    const int MAX_ITEMS = 100;
+
+    FoodItem* foods = new FoodItem[MAX_ITEMS];
+    int size = 0;
+    int* sizePtr = &size;
+
+    int calorieGoal;
+    int* goalPtr = &calorieGoal;
+
+    int choice;
+
+    readFoodItems(foods, sizePtr, MAX_ITEMS);
+
+    cout << "Enter your daily calorie goal: ";
+    cin >> *goalPtr;
+
+    while (*goalPtr <= 0) {
+        cout << "Invalid goal. Enter a positive calorie goal: ";
+        cin >> *goalPtr;
+    }
+
+    delete[] foods;
     return 0;
 }
