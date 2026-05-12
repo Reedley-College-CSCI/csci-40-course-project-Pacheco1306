@@ -132,6 +132,35 @@ void displayFoodItems(FoodItem* foods, int size) {
     }
 }
 
+int getTotalCalories(FoodItem* foods, int size) {
+    int total = 0;
+
+    for (int i = 0; i < size; i++) {
+        total += (foods + i)->calories;
+    }
+
+    return total;
+}
+
+double getTotalFat(FoodItem* foods, int size) {
+    double total = 0;
+
+    for (int i = 0; i < size; i++) {
+        total += (foods + i)->fat;
+    }
+
+    return total;
+}
+
+double getTotalCarbs(FoodItem* foods, int size) {
+    double total = 0;
+
+    for (int i = 0; i < size; i++) {
+        total += (foods + i)->carbs;
+    }
+
+    return total;
+}
 
 int main() {
     const int MAX_ITEMS = 100;
