@@ -62,7 +62,7 @@ int readFoodItems(FoodItem* foods, int* size, int maxSize) {
     }
 
     inputFile.close();
-    return 1;
+    return 0;
 }
 
 void saveFoodItems(FoodItem* foods, int size) {
@@ -160,6 +160,34 @@ double getTotalCarbs(FoodItem* foods, int size) {
     }
 
     return total;
+}
+
+void displaySummary(FoodItem* foods, int size, int calorieGoal) {
+    int totalCalories = getTotalCalories(foods, size);
+    double totalFat = getTotalFat(foods, size);
+    double totalCarbs = getTotalCarbs(foods, size);
+
+    cout << fixed << setprecision(1);
+    cout << endl;
+    cout << "===== Nutrition Summary =====" << endl;
+    cout << "Daily calorie goal: " << calorieGoal << endl;
+    cout << "Total calories eaten: " << totalCalories << endl;
+    cout << "Total fat: " << totalFat << "g" << endl;
+    cout << "Total carbohydrates: " << totalCarbs << "g" << endl;
+
+    if (totalCalories > calorieGoal) {
+        cout << "You went over by "
+             << totalCalories - calorieGoal
+             << " calories." << endl;
+    }
+    else if (totalCalories < calorieGoal) {
+        cout << "You are under by "
+             << calorieGoal - totalCalories
+             << " calories." << endl;
+    }
+    else {
+        cout << "You met your calorie goal exactly." << endl;
+    }
 }
 
 int main() {
