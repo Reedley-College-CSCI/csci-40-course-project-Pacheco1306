@@ -184,7 +184,28 @@ int main() {
         cin >> *goalPtr;
     }
 
-    
+    do {
+        displayMenu();
+        cin >> choice;
+
+        if (choice == 1) {
+            displayFoodItems(foods, *sizePtr);
+        }
+        else if (choice == 2) {
+            addFoodItem(foods, sizePtr, MAX_ITEMS);
+        }
+        else if (choice == 3) {
+            displaySummary(foods, *sizePtr, *goalPtr);
+        }
+        else if (choice == 4) {
+            saveFoodItems(foods, *sizePtr);
+            cout << "Food items saved. Exiting program." << endl;
+        }
+        else {
+            cout << "Invalid menu option. Please try again." << endl;
+        }
+
+    } while (choice != 4);
 
     delete[] foods;
     return 0;
