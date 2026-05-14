@@ -214,7 +214,12 @@ int main() {
 
     do {
         displayMenu();
-        cin >> choice;
+        if(!(cin >> choice)) {
+            cout << "Invalid input. Please enter a number." << endl;
+            cin.clear();
+            cin.ignore(1000, '\n');
+            choice = 0;
+        }
 
         if (choice == 1) {
             displayFoodItems(foods, *sizePtr);
