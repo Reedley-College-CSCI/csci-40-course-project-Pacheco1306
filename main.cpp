@@ -114,6 +114,34 @@ void addFoodItem(FoodItem* foods, int* size, int maxSize) {
 }
 
 
+void searchFoodItem(FoodItem* foods, int size) {
+    string searchName;
+    bool found = false;
+
+    cin.ignore(1000, '\n');
+
+    cout << "Enter food name to search for: ";
+    getline(cin, searchName);
+
+    for (int i = 0; i < size; i++) {
+        if ((foods + i)->name == searchName) {
+            cout << endl;
+            cout << "Food found:" << endl;
+            cout << (foods + i)->name << " - "
+                 << (foods + i)->calories << " calories, "
+                 << (foods + i)->fat << "g fat, "
+                 << (foods + i)->carbs << "g carbs" << endl;
+
+            found = true;
+        }
+    }
+
+    if (!found) {
+        cout << "Food item not found." << endl;
+    }
+}
+
+
 void displayFoodItems(FoodItem* foods, int size) {
     if (size == 0) {
         cout << "No food items have been recorded." << endl;
