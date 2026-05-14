@@ -5,7 +5,7 @@
 - What problem does your project solve?  
 - Briefly describe the purpose and key features of your program.  
 
----
+---    My project solves the problem of helping a user keep track of the food they have eaten during the day. The program records food names, calories, fat, and carbohydrates, then compares the total calories eaten to the user's daily calorie goal. The prupose of the program is to make a simple calorie tracker that stores food data, displays food entries, calculate nutrion totals, and saves the data between program runs. Key features include reading from a file, adding new food items, viewing all recorded foods, displaying  a nutrion summary, and saving the updated food list. 
 
 ## 2. Design Decisions
 - What fundamental programming constructs and data types did you use, and why?  
@@ -14,7 +14,7 @@
 - How do you ensure data persistence between program runs?  
 - Did you consider alternative approaches? If so, why did you not use them?  
 
----
+---    
 
 ## 3. Testing Summary
 - **Structured Testing Log:** Include a table with test cases, expected output, actual output, and pass/fail status.  
