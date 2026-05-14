@@ -32,6 +32,9 @@ struct FoodItem {
     cout << "2. Add food item" << endl;
     cout << "3. View nutrition summary" << endl;
     cout << "4. Save and exit" << endl;
+    cout << "5. Sort food items by name" << endl;
+    cout << "6. Sort food items by calories" << endl;
+    cout << "7. Save and exit" << endl;
     cout << "Choose an option: ";
 }
 
@@ -298,13 +301,22 @@ int main() {
         }
         else if (choice == 4) {
             saveFoodItems(foods, *sizePtr);
-            cout << "Food items saved. Exiting program." << endl;
         }
+        else if (choice == 5) {
+            sortFoodItemsByName(foods, *sizePtr);
+         }
+         else if (choice == 6) {
+             sortFoodItemsByCalories(foods, *sizePtr);
+         }
+         else if (choice == 7) {
+             saveFoodItems(foods, *sizePtr);
+             cout << "Food items saved. Exiting program." << endl;
+          } 
         else {
             cout << "Invalid menu option. Please try again." << endl;
         }
 
-    } while (choice != 4);
+     } while (choice != 7);
 
     delete[] foods;
     return 0;
