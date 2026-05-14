@@ -67,7 +67,11 @@ int readFoodItems(FoodItem* foods, int* size, int maxSize) {
 
 void saveFoodItems(FoodItem* foods, int size) {
     ofstream outputFile("calories.txt");
-
+ if (!outputFile) {
+  cout << "Error: could not save food items." << endl;
+  return;
+ }
+ 
     for (int i = 0; i < size; i++) {
         outputFile << (foods + i)->name << endl;
         outputFile << (foods + i)->calories << endl;
