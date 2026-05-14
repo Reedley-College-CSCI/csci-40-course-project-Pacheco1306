@@ -158,6 +158,23 @@ void searchFoodItem(FoodItem* foods, int size) {
     }
 }
 
+void sortFoodItemsByName(FoodItem* foods, int size) {
+    for (int i = 0; i < size - 1; i++) {
+        int minIndex = i;
+
+        for (int j = i + 1; j < size; j++) {
+            if ((foods + j)->name < (foods + minIndex)->name) {
+                minIndex = j;
+            }
+        }
+
+        FoodItem temp = *(foods + i);
+        *(foods + i) = *(foods + minIndex);
+        *(foods + minIndex) = temp;
+    }
+
+    cout << "Food items sorted by name." << endl;
+}
 
 void displayFoodItems(FoodItem* foods, int size) {
     if (size == 0) {
