@@ -113,6 +113,23 @@ void addFoodItem(FoodItem* foods, int* size, int maxSize) {
     cout << "Food item added successfully." << endl;
 }
 
+void sortFoodItemsByCalories(FoodItem* foods, int size) {
+    for (int i = 0; i < size - 1; i++) {
+        int minIndex = i;
+
+        for (int j = i + 1; j < size; j++) {
+            if ((foods + j)->calories < (foods + minIndex)->calories) {
+                minIndex = j;
+            }
+        }
+
+        FoodItem temp = *(foods + i);
+        *(foods + i) = *(foods + minIndex);
+        *(foods + minIndex) = temp;
+    }
+
+    cout << "Food items sorted by calories." << endl;
+}
 
 void searchFoodItem(FoodItem* foods, int size) {
     string searchName;
