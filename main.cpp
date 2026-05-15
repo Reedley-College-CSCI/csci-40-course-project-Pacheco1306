@@ -31,7 +31,7 @@ struct FoodItem {
     cout << "1. View food items" << endl;
     cout << "2. Add food item" << endl;
     cout << "3. View nutrition summary" << endl;
-    cout << "4. Save and exit" << endl;
+    cout << "4. Srach food item" << endl;
     cout << "5. Sort food items by name" << endl;
     cout << "6. Sort food items by calories" << endl;
     cout << "7. Save and exit" << endl;
