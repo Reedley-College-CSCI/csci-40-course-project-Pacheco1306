@@ -30,7 +30,7 @@ Data persistence is handled by reading food items from calories.txt when the pro
 - **Include a link to your required video demonstration** showcasing how the project works (**3-7 minutes**). 
     Make sure it shareable without approval needed.
 
---- 
+--- https://youtu.be/385mrYsRQ4w
 
 ## 5. Challenges and Lessons Learned
 - What challenges did you encounter while working on this project?  
