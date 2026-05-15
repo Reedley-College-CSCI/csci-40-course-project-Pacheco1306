@@ -31,7 +31,7 @@ struct FoodItem {
     cout << "1. View food items" << endl;
     cout << "2. Add food item" << endl;
     cout << "3. View nutrition summary" << endl;
-    cout << "4. Srach food item" << endl;
+    cout << "4. Search food item" << endl;
     cout << "5. Sort food items by name" << endl;
     cout << "6. Sort food items by calories" << endl;
     cout << "7. Save and exit" << endl;
@@ -300,13 +300,15 @@ int main() {
             displaySummary(foods, *sizePtr, *goalPtr);
         }
         else if (choice == 4) {
-            saveFoodItems(foods, *sizePtr);
+            searchFoodItem(foods, *sizePtr);
         }
         else if (choice == 5) {
             sortFoodItemsByName(foods, *sizePtr);
+            displayFoodItems(foods, *sizePtr);
          }
          else if (choice == 6) {
              sortFoodItemsByCalories(foods, *sizePtr);
+             displayFoodItems(foods, *sizePtr);
          }
          else if (choice == 7) {
              saveFoodItems(foods, *sizePtr);
