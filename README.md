@@ -23,7 +23,27 @@ Data persistence is handled by reading food items from calories.txt when the pro
 - What testing methods did you use?  
 - Provide examples of test inputs (valid and invalid) and describe how your program responds.  
 
----
+--- 
+Input : Daily calorie goal: 2000
+Menu choice: 2
+Food name: Chicken Bowl
+Calories: 650
+Fat: 18.5
+Carbs: 72.0
+
+Program response : Food item added successfully.
+
+Input 2 Invalid input : Daily calorie goal: -1500
+
+Program Response : Invalid goal. Enter a positive calorie goal:
+
+Search input : Menu choice: 4
+Search food name: Chicken Bowl
+
+Program Response : Food found:
+Chicken Bowl - 650 calories, 18.5g fat, 72.0g carbs
+
+I used valid input testing, invalid input testing, file testing, edge case testing, and menu testing. Valid input testing checked that normal food items could be added, viewed, searched, sorted, and saved. Invalid input testing checked that the program responded correctly to negative values and incorrect menu input
 
 ## 4. Technical Walkthrough
 - Explain the main functionality of your program.  
